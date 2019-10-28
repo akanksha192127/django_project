@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from url_shortner.views import get_all
+from url_shortner.views import get_all, redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('urls/', get_all)
+    path('urls/', get_all),
+    path('urls/<slug:short>', redirect),
 ]
